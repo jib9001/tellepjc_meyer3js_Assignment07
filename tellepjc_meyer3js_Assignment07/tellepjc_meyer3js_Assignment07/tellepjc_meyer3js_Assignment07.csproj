@@ -99,6 +99,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assignment07.Master" />
+    <Content Include="dsStore.xsc">
+      <DependentUpon>dsStore.xsd</DependentUpon>
+    </Content>
+    <None Include="dsStore.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsStore.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="dsStore.xss">
+      <DependentUpon>dsStore.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,6 +123,11 @@
     <Content Include="Assignment07.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsStore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsStore.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Assignment07.Master.cs">
       <DependentUpon>Assignment07.Master</DependentUpon>
