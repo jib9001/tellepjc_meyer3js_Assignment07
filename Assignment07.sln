@@ -1,26 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Assignment07", ".", "{A870E3A0-FCB4-4058-92DC-378642009772}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "tellepjc_meyer3js_Assignment07", ".", "{A870E3A0-FCB4-4058-92DC-378642009772}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_56355"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Source\Repos\Assignment07\"
+		Debug.AspNetCompiler.PhysicalPath = "..\tellepjc_meyer3js_Assignment07\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56355\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_56355"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Source\Repos\Assignment07\"
+		Release.AspNetCompiler.PhysicalPath = "..\tellepjc_meyer3js_Assignment07\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56355\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "56355"
+		SlnRelativePath = "..\tellepjc_meyer3js_Assignment07\"
 	EndProjectSection
 EndProject
 Global
