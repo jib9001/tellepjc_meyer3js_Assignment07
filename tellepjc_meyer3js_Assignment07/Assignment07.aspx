@@ -39,7 +39,7 @@
     <hr />
     <div class="row">
         <div class="two columns offset-by-five">
-            <asp:Button runat="server" ID="btnSubmit" text="Submit" CssClass="u-max-full-width"/>
+            <asp:Button runat="server" ID="btnSubmit" text="Submit" CssClass="u-max-full-width" OnClick="btnSubmit_Click"/>
         </div>
     </div>
     <hr />
