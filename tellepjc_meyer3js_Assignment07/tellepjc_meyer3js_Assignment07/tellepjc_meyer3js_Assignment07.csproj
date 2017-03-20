@@ -109,7 +109,7 @@
   <ItemGroup>
     <Content Include="Report.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Default.aspx" />
+    <Content Include="Assignment07.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,12 +120,12 @@
     <Compile Include="Assignment07.Master.designer.cs">
       <DependentUpon>Assignment07.Master</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Assignment07.aspx.cs">
+      <DependentUpon>Assignment07.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Assignment07.aspx.designer.cs">
+      <DependentUpon>Assignment07.aspx</DependentUpon>
     </Compile>
     <Compile Include="Report.aspx.cs">
       <DependentUpon>Report.aspx</DependentUpon>
