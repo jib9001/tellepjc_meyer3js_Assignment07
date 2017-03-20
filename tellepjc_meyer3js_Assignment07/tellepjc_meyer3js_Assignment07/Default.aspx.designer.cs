@@ -11,7 +11,7 @@ namespace tellepjc_meyer3js_Assignment07
 {
 
 
-    public partial class WebForm1
+    public partial class Default
     {
     }
 }
