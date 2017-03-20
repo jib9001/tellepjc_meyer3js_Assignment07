@@ -17,10 +17,10 @@ public partial class tellepjc_meyer3js_Assignment07_Assignment07 : System.Web.UI
             // Get Computer case data and initialize first selected index in ddl.
             tStoreTableAdapter storeTableAdapter = new tStoreTableAdapter();
             dsStore.tStoreDataTable storeDataTable = storeTableAdapter.GetData();
-            lbStore.DataTextField = "StoreWithAddress";
-            lbStore.DataValueField = "StoreID";
-            lbStore.DataSource = storeDataTable;
-            lbStore.DataBind();
+            cbStore.DataTextField = "StoreWithAddress";
+            cbStore.DataValueField = "StoreID";
+            cbStore.DataSource = storeDataTable;
+            cbStore.DataBind();
            // lbStore.SelectedIndex = 0;
             //GetParts(ddlComputerCase.SelectedValue);
         }
