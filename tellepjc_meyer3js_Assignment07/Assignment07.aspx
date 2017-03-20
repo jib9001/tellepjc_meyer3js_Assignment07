@@ -7,7 +7,7 @@
     <asp:Calendar runat="server" ID="cEndDate"></asp:Calendar>
     <asp:TextBox runat="server" ID="tbMinQty"></asp:TextBox>
     <asp:TextBox runat="server" ID="tbMaxQty"></asp:TextBox>
-    <asp:ListBox runat="server" ID="lbStore"></asp:ListBox>
+    <asp:ListBox runat="server" ID="lbStore" MultiSelect="True" ListStyle="Option"></asp:ListBox>
     <asp:Button runat="server" ID="btnSubmit" />
 </asp:Content>
 
