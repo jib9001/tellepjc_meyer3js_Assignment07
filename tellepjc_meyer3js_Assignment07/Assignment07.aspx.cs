@@ -1,4 +1,27 @@
-﻿using dsStoreTableAdapters;
+﻿/*
+
+
+
+
+
+
+
+-- Example query structure
+
+SELECT        dbo.tStore.Store, SUM(dbo.tTransactionDetail.QtyOfProduct) AS Expr1
+FROM            dbo.tTransaction INNER JOIN
+                         dbo.tTransactionDetail ON dbo.tTransaction.TransactionID = dbo.tTransactionDetail.TransactionID INNER JOIN
+                         dbo.tStore ON dbo.tTransaction.StoreID = dbo.tStore.StoreID
+WHERE        (dbo.tStore.Store = N'Amelia' OR
+                         dbo.tStore.Store = N'Anderson' OR
+                         dbo.tStore.Store = N'Downtown' OR
+                         dbo.tStore.Store = N'Eastgate' OR
+                         dbo.tStore.Store = N'Fresno') AND (dbo.tTransactionDetail.QtyOfProduct BETWEEN 1 AND 6) AND (dbo.tTransaction.DateOfTransaction BETWEEN '2017-11-19' AND '2017-12-29')
+GROUP BY dbo.tStore.Store
+
+*/
+
+using dsStoreTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
