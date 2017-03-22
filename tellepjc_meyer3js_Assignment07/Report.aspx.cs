@@ -39,16 +39,16 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 
         DataTable tblResult;
         tblResult = ds.Tables["tblSource"];
-       // dlResult.DataSource = ds;
-       // dlResult.DataBind();
-       // dlResult.DataTextField = "StoreWithAddress";
-       // cbStore.DataValueField = "Store";
-       // cbStore.DataSource = storeDataTable;
-
+        // dlResult.DataSource = ds;
+        // dlResult.DataBind();
+        // dlResult.DataTextField = "StoreWithAddress";
+        // cbStore.DataValueField = "Store";
+        // cbStore.DataSource = storeDataTable;
+        lbResult.Items.Add(String.Format("Store | Address | sumQty | Name | Description | Manufacturer"));
         foreach (DataRow drCurrent in tblResult.Rows)
         {
 
-            lbResult.Items.Add(String.Format("{0} {1} {2} {3} {4} {5}", drCurrent[0].ToString(), drCurrent[1].ToString(), drCurrent[2].ToString(), drCurrent[3].ToString(), drCurrent[4].ToString(), drCurrent[5].ToString()));
+            lbResult.Items.Add(drCurrent[0].ToString().PadRight(10) + drCurrent[1].ToString().PadRight(10) + drCurrent[2].ToString().PadRight(10) + drCurrent[3].ToString().PadRight(10) + drCurrent[4].ToString().PadRight(10) + drCurrent[5].ToString().PadRight(10));
             
 
             // adapter.Fill(ds);
