@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <asp:DataList ID="dlResult" runat="server"></asp:DataList>
+    <asp:ListBox ID="lbResult" runat="server"></asp:ListBox>
 </asp:Content>
 
 
