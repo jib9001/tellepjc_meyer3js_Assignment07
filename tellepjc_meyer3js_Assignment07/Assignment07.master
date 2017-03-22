@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Assignment07.master.cs" Inherits="tellepjc_meyer3js_Assignment07_Assignment07" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Assignment03</title>
+    <link rel="stylesheet" href="/../CSS/skeleton.css" />
+    <link rel="stylesheet" href="/../CSS/normalize.css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container">
+        <div class="row">
+            <div class="content-footer center-head">
+                <h1>Assignment 07: Reporting with Github enhanced production</h1>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="one column offset-by-one">
+                <a class="button">Home</a>
+            </div>
+        </div>
+        <hr />
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
