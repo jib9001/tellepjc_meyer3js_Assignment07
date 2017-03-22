@@ -45,10 +45,17 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
         // cbStore.DataValueField = "Store";
         // cbStore.DataSource = storeDataTable;
         lbResult.Items.Add(String.Format("Store | Address | sumQty | Name | Description | Manufacturer"));
+        
         foreach (DataRow drCurrent in tblResult.Rows)
         {
-
-            lbResult.Items.Add(drCurrent[0].ToString().PadRight(10) + drCurrent[1].ToString().PadRight(10) + drCurrent[2].ToString().PadRight(10) + drCurrent[3].ToString().PadRight(10) + drCurrent[4].ToString().PadRight(10) + drCurrent[5].ToString().PadRight(10));
+            string test = "";
+            test = drCurrent[0].ToString().PadRight(30, '\u00A0');
+            test += drCurrent[1].ToString().PadRight(30, '\u00A0');
+            test += drCurrent[2].ToString().PadRight(30, '\u00A0');
+            test += drCurrent[3].ToString().PadRight(40, '\u00A0');
+            test += drCurrent[4].ToString().PadRight(30, '\u00A0');
+            test += drCurrent[5].ToString().PadRight(30, '\u00A0');
+            lbResult.Items.Add(test);
             
 
             // adapter.Fill(ds);
