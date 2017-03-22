@@ -41,10 +41,9 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 
     private void GenerateReport()
     {
-        ReportDataSource rds = new ReportDataSource("dsResult", result.Tables[0]);
+        ReportDataSource tResult = new ReportDataSource("tResult", result.Tables[0]);
         this.rvResult.LocalReport.DataSources.Clear();
-        this.rvResult.LocalReport.DataSources.Add(rds);
-        this.bindingSource1.DataSource = rds;
-
-    }
+        this.rvResult.LocalReport.DataSources.Add(tResult);
+        this.rvResult.DataBind();
+   }
 }

@@ -73,7 +73,7 @@
   <xs:element name="dsResult" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsResult" msprop:Generator_UserDSName="dsResult">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tResult" msprop:Generator_TableClassName="tResultDataTable" msprop:Generator_TableVarName="tabletResult" msprop:Generator_TablePropName="tResult" msprop:Generator_RowDeletingName="tResultRowDeleting" msprop:Generator_RowChangingName="tResultRowChanging" msprop:Generator_RowEvHandlerName="tResultRowChangeEventHandler" msprop:Generator_RowDeletedName="tResultRowDeleted" msprop:Generator_UserTableName="tResult" msprop:Generator_RowChangedName="tResultRowChanged" msprop:Generator_RowEvArgName="tResultRowChangeEvent" msprop:Generator_RowClassName="tResultRow">
+        <xs:element name="tResult" msprop:Generator_TableClassName="tResultDataTable" msprop:Generator_TableVarName="tabletResult" msprop:Generator_RowChangedName="tResultRowChanged" msprop:Generator_TablePropName="tResult" msprop:Generator_RowDeletingName="tResultRowDeleting" msprop:Generator_RowChangingName="tResultRowChanging" msprop:Generator_RowEvHandlerName="tResultRowChangeEventHandler" msprop:Generator_RowDeletedName="tResultRowDeleted" msprop:Generator_RowClassName="tResultRow" msprop:Generator_UserTableName="tResult" msprop:Generator_RowEvArgName="tResultRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Store" msprop:Generator_ColumnVarNameInTable="columnStore" msprop:Generator_ColumnPropNameInRow="Store" msprop:Generator_ColumnPropNameInTable="StoreColumn" msprop:Generator_UserColumnName="Store" minOccurs="0">
