@@ -5,7 +5,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <asp:ListBox ID="lbResult" runat="server"></asp:ListBox>
+    <div class="row">
+        <div class="ten columns offset-by-one">
+            <asp:ListBox style="overflow-x:auto;" SelectionMode="Multiple" CssClass="u-max-full-width" Height="500px" ID="lbResult" runat="server"></asp:ListBox>
+        </div>
+    </div>
 </asp:Content>
 
 
