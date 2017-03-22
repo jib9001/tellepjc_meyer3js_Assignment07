@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using dsResultTableAdapters;
 using System.Data.SqlClient;
-using Microsoft.Reporting.WebForms;
+//using Microsoft.Reporting.WebForms;
 
 public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 {
@@ -16,7 +16,7 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         PopulateDataSet();
-        //GenerateReport();
+        GenerateReport();
            
         /* result.GetData.
          dsResult.tResultDataTable resultDataTable = storeTableAdapter.GetData();
@@ -26,11 +26,6 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
          cbStore.DataSource = storeDataTable;
          cbStore.DataBind();*/
 
-    }
-
-    protected void Page_LoadComplete(object sender, EventArgs e)
-    {
-        GenerateReport();
     }
 
     private void PopulateDataSet()
@@ -50,10 +45,7 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            ReportDataSource tResult = new ReportDataSource("tResult", result.Tables[1]);
-            this.rvResult.LocalReport.DataSources.Clear();
-            this.rvResult.LocalReport.DataSources.Add(tResult);
-            this.rvResult.DataBind();
+            
         }
    }
 }
