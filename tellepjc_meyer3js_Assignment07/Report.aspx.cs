@@ -16,7 +16,7 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         PopulateDataSet();
-        GenerateReport();
+        //GenerateReport();
            
         /* result.GetData.
          dsResult.tResultDataTable resultDataTable = storeTableAdapter.GetData();
@@ -28,12 +28,19 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 
     }
 
+    protected void Page_LoadComplete(object sender, EventArgs e)
+    {
+        GenerateReport();
+    }
+
     private void PopulateDataSet()
     {
         result = new dsResult();
         tResultTableAdapter resultTableAdapter = new tResultTableAdapter();
         dsResult.tResultDataTable resultDataTable = new dsResult.tResultDataTable();
         SqlDataAdapter adapter = new SqlDataAdapter(Convert.ToString(Session["Query"]), selectConnectionString:"Data Source=il-server-001.uccc.uc.edu\\MSSQLSERVER2012;Initial Catalog=GroceryStoreSimulator;Persist Security Info=True;User ID=GroceryStoreSimulatorWebformLogin;Password=RememberTheCat");
+
+
         
         adapter.Fill(result);
         
@@ -41,9 +48,12 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 
     private void GenerateReport()
     {
-        ReportDataSource tResult = new ReportDataSource("tResult", result.Tables[0]);
-        this.rvResult.LocalReport.DataSources.Clear();
-        this.rvResult.LocalReport.DataSources.Add(tResult);
-        this.rvResult.DataBind();
+        if (!IsPostBack)
+        {
+            ReportDataSource tResult = new ReportDataSource("tResult", result.Tables[1]);
+            this.rvResult.LocalReport.DataSources.Clear();
+            this.rvResult.LocalReport.DataSources.Add(tResult);
+            this.rvResult.DataBind();
+        }
    }
 }
