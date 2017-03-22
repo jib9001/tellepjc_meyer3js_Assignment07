@@ -31,8 +31,8 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
         dsResult result = new dsResult();
         tResultTableAdapter resultTableAdapter = new tResultTableAdapter();
         dsResult.tResultDataTable resultDataTable = new dsResult.tResultDataTable();
-        SqlDataAdapter adapter = new SqlDataAdapter();
-        adapter.SelectCommand = new SqlCommand(Convert.ToString(Session["Query"]));
+        SqlDataAdapter adapter = new SqlDataAdapter(Convert.ToString(Session["Query"]), selectConnectionString:"Data Source=il-server-001.uccc.uc.edu\\MSSQLSERVER2012;Initial Catalog=GroceryStoreSimulator;Persist Security Info=True;User ID=GroceryStoreSimulatorWebformLogin;Password=RememberTheCat");
+        
         adapter.Fill(result);
     }
 

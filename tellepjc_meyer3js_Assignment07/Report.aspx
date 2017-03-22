@@ -7,7 +7,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <rsweb:ReportViewer ID="rvResult" runat="server"></rsweb:ReportViewer>
+    <rsweb:ReportViewer ID="rvResult" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+        <LocalReport ReportPath="tellepjc_meyer3js_Assignment07\rResult.rdlc">
+        </LocalReport>
+    </rsweb:ReportViewer>
 </asp:Content>
 
 
