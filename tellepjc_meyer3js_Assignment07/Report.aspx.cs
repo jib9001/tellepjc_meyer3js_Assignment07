@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using dsResultTableAdapters;
 using System.Data.SqlClient;
+using Microsoft.Reporting.WebForms;
 
 public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 {
@@ -37,6 +38,11 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 
     private void GenerateReport()
     {
+        LocalReport report = rvResult.LocalReport;
+        report.ReportPath = "rvResult.rdlc";
+        //ReportDataSource reportResult = new ReportDataSource();
+        //reportResult.Value = ((dsResult)Session["dataset"]).Tables[""];
+        //report.DataSources.Add(Session["dataset"]);
         
     }
 }
