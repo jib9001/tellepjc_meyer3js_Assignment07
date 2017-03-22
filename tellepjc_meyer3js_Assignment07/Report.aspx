@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="row">
         <div class="ten columns offset-by-one">
-            <asp:ListBox style="overflow-x:auto;" SelectionMode="Multiple" CssClass="u-max-full-width" Height="500px" ID="lbResult" runat="server"></asp:ListBox>
+            <asp:ListBox style="overflow-x:auto;" SelectionMode="Multiple" CssClass="u-max-full-width" Height="500px" FontFamily="Monospace" ID="lbResult" runat="server"></asp:ListBox>
         </div>
     </div>
 </asp:Content>
