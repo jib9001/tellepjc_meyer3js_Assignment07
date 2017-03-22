@@ -11,6 +11,8 @@ using Microsoft.Reporting.WebForms;
 
 public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 {
+
+    dsResult result;
     protected void Page_Load(object sender, EventArgs e)
     {
         PopulateDataSet();
@@ -28,21 +30,21 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 
     private void PopulateDataSet()
     {
-        dsResult result = new dsResult();
+        result = new dsResult();
         tResultTableAdapter resultTableAdapter = new tResultTableAdapter();
         dsResult.tResultDataTable resultDataTable = new dsResult.tResultDataTable();
         SqlDataAdapter adapter = new SqlDataAdapter(Convert.ToString(Session["Query"]), selectConnectionString:"Data Source=il-server-001.uccc.uc.edu\\MSSQLSERVER2012;Initial Catalog=GroceryStoreSimulator;Persist Security Info=True;User ID=GroceryStoreSimulatorWebformLogin;Password=RememberTheCat");
         
         adapter.Fill(result);
+        
     }
 
     private void GenerateReport()
     {
-       // LocalReport report = rvResult.LocalReport;
-        //report.ReportPath = "rResult.rdlc";
-        //ReportDataSource reportResult = new ReportDataSource();
-        //reportResult.Value = ((dsResult)Session["dataset"]).Tables[""];
-        //report.DataSources.Add(Session["dataset"]);
-        
+        ReportDataSource rds = new ReportDataSource("dsResult", result.Tables[0]);
+        this.rvResult.LocalReport.DataSources.Clear();
+        this.rvResult.LocalReport.DataSources.Add(rds);
+        this.bindingSource1.DataSource = rds;
+
     }
 }
