@@ -120,6 +120,7 @@ public partial class tellepjc_meyer3js_Assignment07_Assignment07 : System.Web.UI
     /// </summary>
     private void GenerateQueryString() 
     {
+       
        Session["Query"] = String.Format("SELECT dbo.tStore.Store, SUM(dbo.tTransactionDetail.QtyOfProduct) AS sumQty FROM dbo.tTransaction INNER JOIN dbo.tTransactionDetail ON dbo.tTransaction.TransactionID = dbo.tTransactionDetail.TransactionID INNER JOIN dbo.tStore ON dbo.tTransaction.StoreID = dbo.tStore.StoreID WHERE({0}) AND (dbo.tTransactionDetail.QtyOfProduct BETWEEN {1} AND {2}) AND (dbo.tTransaction.DateOfTransaction BETWEEN {3} AND {4}) GROUP BY dbo.tStore.Store", storeList, minQty, maxQty, startDate, endDate);
     }
 }
