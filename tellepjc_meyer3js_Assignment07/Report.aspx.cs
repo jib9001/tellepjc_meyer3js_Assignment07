@@ -38,8 +38,8 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 
     private void GenerateReport()
     {
-        LocalReport report = rvResult.LocalReport;
-        report.ReportPath = "rvResult.rdlc";
+       // LocalReport report = rvResult.LocalReport;
+        //report.ReportPath = "rResult.rdlc";
         //ReportDataSource reportResult = new ReportDataSource();
         //reportResult.Value = ((dsResult)Session["dataset"]).Tables[""];
         //report.DataSources.Add(Session["dataset"]);

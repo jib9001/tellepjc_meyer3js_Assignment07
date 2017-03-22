@@ -77,7 +77,7 @@ public partial class tellepjc_meyer3js_Assignment07_Assignment07 : System.Web.UI
         GenerateQtyRange();
         GenerateQueryString();
 
-        Response.Redirect("/Report.aspx");
+        Response.Redirect("Report.aspx");
     }
 
     /// <summary>
