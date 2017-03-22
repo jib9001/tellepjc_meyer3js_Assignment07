@@ -20,7 +20,7 @@
 /*
 -- Example query structure
 
-SELECT        dbo.tStore.Store, SUM(dbo.tTransactionDetail.QtyOfProduct) AS sumQty
+SELECT        dbo.tStore.Store, SUM(dbo.tTransactionDetail.QtyOfProduct) AS Expr1
 FROM            dbo.tTransaction INNER JOIN
                          dbo.tTransactionDetail ON dbo.tTransaction.TransactionID = dbo.tTransactionDetail.TransactionID INNER JOIN
                          dbo.tStore ON dbo.tTransaction.StoreID = dbo.tStore.StoreID
@@ -47,8 +47,8 @@ public partial class tellepjc_meyer3js_Assignment07_Assignment07 : System.Web.UI
     string maxQty = ""; // The maximum quantity of products sold in a transaction
     string startDate = ""; // The starting date of a transaction that the query will look in the db
     string endDate = ""; // The ending date of a transaction that the query will look in the db
-    string storeList = ""; // The string that will contain the stores that the user selected
-    
+    string storeQueryList = ""; // The string that will contain the stores that the user selected
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -92,8 +92,8 @@ public partial class tellepjc_meyer3js_Assignment07_Assignment07 : System.Web.UI
     /// </summary>
     private void GenerateDateRange()
     {
-        startDate = String.Format("'{0}-{1}-{2}'", cStartDate.SelectedDate.Year, cStartDate.SelectedDate.Month, cStartDate.SelectedDate.Day);
-        endDate = String.Format("'{0}-{1}-{2}'", cEndDate.SelectedDate.Year, cEndDate.SelectedDate.Month, cEndDate.SelectedDate.Day);
+        startDate = String.Format("{0}-{1}-{2}", cStartDate.SelectedDate.Year, cStartDate.SelectedDate.Month, cStartDate.SelectedDate.Day);
+        endDate = String.Format("{0}-{1}-{2}", cEndDate.SelectedDate.Year, cEndDate.SelectedDate.Month, cEndDate.SelectedDate.Day);
     }
 
     /// <summary>
@@ -106,12 +106,12 @@ public partial class tellepjc_meyer3js_Assignment07_Assignment07 : System.Web.UI
         {
             if (item.Selected && !hasRun)
             {
-                storeList += "dbo.tStore.Store = N'" + item.Value + "'";
+                storeQueryList += "dbo.tStore.Store = " + item.Value;
                 hasRun = true;
             }
             else if (item.Selected)
             {
-                storeList += " OR dbo.tStore.Store = N'" + item.Value + "'";
+                storeQueryList += "or dbo.tStore.Store = " + item.Value;
             }
         }
     }
@@ -120,6 +120,6 @@ public partial class tellepjc_meyer3js_Assignment07_Assignment07 : System.Web.UI
     /// </summary>
     private void GenerateQueryString() 
     {
-       Session["Query"] = String.Format("SELECT dbo.tStore.Store, SUM(dbo.tTransactionDetail.QtyOfProduct) AS sumQty FROM dbo.tTransaction INNER JOIN dbo.tTransactionDetail ON dbo.tTransaction.TransactionID = dbo.tTransactionDetail.TransactionID INNER JOIN dbo.tStore ON dbo.tTransaction.StoreID = dbo.tStore.StoreID WHERE({0}) AND (dbo.tTransactionDetail.QtyOfProduct BETWEEN {1} AND {2}) AND (dbo.tTransaction.DateOfTransaction BETWEEN {3} AND {4}) GROUP BY dbo.tStore.Store", storeList, minQty, maxQty, startDate, endDate);
+        
     }
 }
