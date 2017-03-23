@@ -32,35 +32,12 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
     private void PopulateDataSet()
     {
         DataSet ds = new DataSet("Result");
-        // tResultTableAdapter resultTableAdapter = new tResultTableAdapter();
-        // dsResult.tResultDataTable resultDataTable = new dsResult.tResultDataTable();
         SqlDataAdapter adapter = new SqlDataAdapter(Convert.ToString(Session["Query"]), selectConnectionString: "Data Source=il-server-001.uccc.uc.edu\\MSSQLSERVER2012;Initial Catalog=GroceryStoreSimulator;Persist Security Info=True;User ID=GroceryStoreSimulatorWebformLogin;Password=RememberTheCat");
         adapter.FillSchema(ds, SchemaType.Source, "tblSource");
         adapter.Fill(ds, "tblSource");
 
         
         tblResult = ds.Tables["tblSource"];
-        // dlResult.DataSource = ds;
-        // dlResult.DataBind();
-        // dlResult.DataTextField = "StoreWithAddress";
-        // cbStore.DataValueField = "Store";
-        // cbStore.DataSource = storeDataTable;
-        /*lbResult.Items.Add(String.Format("Store | Address | sumQty | Name | Description | Manufacturer"));
-        
-        foreach (DataRow drCurrent in tblResult.Rows)
-        {
-            string test = "";
-            test = drCurrent[0].ToString().PadRight(30, '\u00A0');
-            test += drCurrent[1].ToString().PadRight(30, '\u00A0');
-            test += drCurrent[2].ToString().PadRight(30, '\u00A0');
-            test += drCurrent[3].ToString().PadRight(40, '\u00A0');
-            test += drCurrent[4].ToString().PadRight(30, '\u00A0');
-            test += drCurrent[5].ToString().PadRight(30, '\u00A0');
-            lbResult.Items.Add(test);
-            
-
-            // adapter.Fill(ds);
-        }*/
     }
 
     private void GenerateReport()

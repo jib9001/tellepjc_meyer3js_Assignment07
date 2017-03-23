@@ -16,40 +16,50 @@
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
             <HeaderTemplate>
-                <table class="auto-style1">
-                    <tr>
-                        <td>Store</td>
-                        <td>Address</td>
-                        <td>Sum of Qty Sold</td>
-                        <td>Name</td>
-                        <td>Description</td>
-                        <td>Manufacturer</td>
-                    </tr>
-                </table>
+                <div class="row">
+                    <div class="two columns">
+                        Store
+                    </div>
+                    <div class="two columns">
+                        Address
+                    </div>
+                    <div class="two columns">
+                        Sum of Qty Sold
+                    </div>
+                    <div class="two columns">
+                        Name
+                    </div>
+                    <div class="two columns">
+                        Description
+                    </div>
+                    <div class="two columns">
+                        Manufacturer
+                    </div>
+                </div>
             </HeaderTemplate>
             <ItemTemplate>
-                <table class="auto-style1">
-                    <tr>
-                        <td>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Store") %>'></asp:Label>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Address") %>'></asp:Label>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("sumQty") %>'></asp:Label>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
-                        </td>
-                        <td>
-                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("Manufacturer") %>'></asp:Label>
-                        </td>
-                    </tr>
-                </table>
+
+                <div class="row">
+                    <div class="two columns">
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("Store") %>'></asp:Label>
+                    </div>
+                    <div class="two columns">
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Address") %>'></asp:Label>
+                    </div>
+                    <div class="two columns">
+                        <asp:Label ID="Label3" runat="server" Text='<%# Eval("sumQty") %>'></asp:Label>
+                    </div>
+                    <div class="two columns">
+                        <asp:Label ID="Label4" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
+                    </div>
+                    <div class="two columns">
+                        <asp:Label ID="Label5" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
+                    </div>
+                    <div class="two columns">
+                        <asp:Label ID="Label6" runat="server" Text='<%# Eval("Manufacturer") %>'></asp:Label>
+                    </div>
+                </div>
+
             </ItemTemplate>
             <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
         </asp:DataList>
