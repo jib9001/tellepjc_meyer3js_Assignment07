@@ -5,7 +5,8 @@
  * tellepjc@mail.uc.edu | meyer3js@mail.uc.edu
  * This assignment demonstrates our ability to create a query based on user input while also generating a 
  * report from that input.
- * This class contains the events necessary to create a dynamic query based on user input.
+ * This class contains the methods necessary to generate a report based on the query generated from user input
+ * from the Assignment07.aspx page.
  * Due Date: Wednesday, March 22nd, 2017 by 5:19pm
  * Citations: 
  * 
@@ -29,14 +30,21 @@ using System.Data;
 
 public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 {
-    static DataTable tblResult;
+    static DataTable tblResult; // class level variable to allow the datalist to bind to it without scope issues.
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        PopulateDataSet();
-        GenerateReport();
+        if (!IsPostBack)
+        {
+            PopulateDataSet();
+            GenerateReport();
+        }
+        
     }
 
+    /// <summary>
+    /// Creates and populates the dataset with the query gathered from the Assignment07.aspx page
+    /// </summary>
     private void PopulateDataSet()
     {
         DataSet ds = new DataSet("Result");
@@ -47,6 +55,9 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
         tblResult = ds.Tables["tblSource"];
     }
 
+    /// <summary>
+    /// Binds the datalist with the contents of the datatable
+    /// </summary>
     private void GenerateReport()
     {
         dlResult.DataSource = tblResult;
