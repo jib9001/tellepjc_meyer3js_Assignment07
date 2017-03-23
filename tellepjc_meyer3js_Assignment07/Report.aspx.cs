@@ -12,12 +12,13 @@ using System.Data;
 
 public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 {
+    DataTable tblResult;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         PopulateDataSet();
         GenerateReport();
-           
+
         /* result.GetData.
          dsResult.tResultDataTable resultDataTable = storeTableAdapter.GetData();
 
@@ -31,20 +32,20 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
     private void PopulateDataSet()
     {
         DataSet ds = new DataSet("Result");
-       // tResultTableAdapter resultTableAdapter = new tResultTableAdapter();
-       // dsResult.tResultDataTable resultDataTable = new dsResult.tResultDataTable();
-        SqlDataAdapter adapter = new SqlDataAdapter(Convert.ToString(Session["Query"]), selectConnectionString:"Data Source=il-server-001.uccc.uc.edu\\MSSQLSERVER2012;Initial Catalog=GroceryStoreSimulator;Persist Security Info=True;User ID=GroceryStoreSimulatorWebformLogin;Password=RememberTheCat");
+        // tResultTableAdapter resultTableAdapter = new tResultTableAdapter();
+        // dsResult.tResultDataTable resultDataTable = new dsResult.tResultDataTable();
+        SqlDataAdapter adapter = new SqlDataAdapter(Convert.ToString(Session["Query"]), selectConnectionString: "Data Source=il-server-001.uccc.uc.edu\\MSSQLSERVER2012;Initial Catalog=GroceryStoreSimulator;Persist Security Info=True;User ID=GroceryStoreSimulatorWebformLogin;Password=RememberTheCat");
         adapter.FillSchema(ds, SchemaType.Source, "tblSource");
         adapter.Fill(ds, "tblSource");
 
-        DataTable tblResult;
+        
         tblResult = ds.Tables["tblSource"];
         // dlResult.DataSource = ds;
         // dlResult.DataBind();
         // dlResult.DataTextField = "StoreWithAddress";
         // cbStore.DataValueField = "Store";
         // cbStore.DataSource = storeDataTable;
-        lbResult.Items.Add(String.Format("Store | Address | sumQty | Name | Description | Manufacturer"));
+        /*lbResult.Items.Add(String.Format("Store | Address | sumQty | Name | Description | Manufacturer"));
         
         foreach (DataRow drCurrent in tblResult.Rows)
         {
@@ -59,14 +60,12 @@ public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
             
 
             // adapter.Fill(ds);
-        }
+        }*/
     }
 
     private void GenerateReport()
     {
-        if (!IsPostBack)
-        {
-            
-        }
-   }
+        dlResult.DataSource = tblResult;
+        dlResult.DataBind();
+    }
 }
