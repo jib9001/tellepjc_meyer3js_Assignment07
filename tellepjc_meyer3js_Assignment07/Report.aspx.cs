@@ -8,25 +8,15 @@ using System.Web.UI.WebControls;
 using dsResultTableAdapters;
 using System.Data.SqlClient;
 using System.Data;
-//using Microsoft.Reporting.WebForms;
 
 public partial class tellepjc_meyer3js_Assignment07_Report : System.Web.UI.Page
 {
-    DataTable tblResult;
+    static DataTable tblResult;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         PopulateDataSet();
         GenerateReport();
-
-        /* result.GetData.
-         dsResult.tResultDataTable resultDataTable = storeTableAdapter.GetData();
-
-         cbStore.DataTextField = "StoreWithAddress";
-         cbStore.DataValueField = "Store";
-         cbStore.DataSource = storeDataTable;
-         cbStore.DataBind();*/
-
     }
 
     private void PopulateDataSet()
